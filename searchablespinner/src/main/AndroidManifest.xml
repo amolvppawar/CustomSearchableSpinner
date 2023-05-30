@@ -2,4 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lithium.searchablespinner">
 
+    <application>
+        <activity
+            android:name=".SearchableSpinners"
+            android:exported="false" />
+    </application>
+
 </manifest>

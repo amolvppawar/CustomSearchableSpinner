@@ -111,15 +111,20 @@ public class SearchableListDialog extends DialogFragment implements
         RecyclerView recyclerView=rootView.findViewById(R.id.listItems);
 
         Toolbar toolbar = rootView.findViewById(R.id.toolbar_top);
-        toolbar.setBackgroundColor(Color.parseColor(_bgColor));
+        TextView btncancle=rootView.findViewById(R.id.btncancle);
+
+        if(_bgColor!=null) {
+            toolbar.setBackgroundColor(Color.parseColor(_bgColor));
+            btncancle.setBackgroundColor(Color.parseColor(_bgColor));
+        }else {
+            toolbar.setBackgroundColor(Color.parseColor("#FAAE3D"));
+            btncancle.setBackgroundColor(Color.parseColor("#FAAE3D"));
+        }
 
         TextView btnHome=rootView.findViewById(R.id.btnHome);
         TextView spinnerTitle=rootView.findViewById(R.id.spinnerTitle);
         List fi= (List) getArguments().getSerializable(ITEMS);
         spinnerTitle.setText(fi.get(0).toString());
-        TextView btncancle=rootView.findViewById(R.id.btncancle);
-
-        btncancle.setBackgroundColor(Color.parseColor(_bgColor));
 
         btnHome.setOnClickListener(new View.OnClickListener() {
                         @Override

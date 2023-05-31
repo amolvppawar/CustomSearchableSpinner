@@ -27,6 +27,8 @@ public class SearchableSpinner extends androidx.appcompat.widget.AppCompatSpinne
     public static final int NO_ITEM_SELECTED = -1;
     private Context _context;
     private List _items;
+    private String bgColor;
+
     private SearchableListDialog _searchableListDialog;
 
     private boolean _isDirty;
@@ -160,6 +162,10 @@ public class SearchableSpinner extends androidx.appcompat.widget.AppCompatSpinne
 
     public void setTitle(String strTitle) {
         _searchableListDialog.setTitle(strTitle);
+    }
+
+    public void setColor(String bgColor) {
+        _searchableListDialog.setColor(bgColor);
     }
 
     public void setPositiveButton(String strPositiveButtonText) {

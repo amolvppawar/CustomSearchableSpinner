@@ -9,6 +9,7 @@ import android.app.DialogFragment;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +48,8 @@ public class SearchableListDialog extends DialogFragment implements
     private SearchView _searchView;
 
     private String _strTitle;
+
+    private String _bgColor;
 
     private String _strPositiveButtonText;
 
@@ -106,11 +110,18 @@ public class SearchableListDialog extends DialogFragment implements
        // String strTitle = _strTitle == null ? "Select Item" : _strTitle;
        // alertDialog.setTitle(strTitle);
         RecyclerView recyclerView=rootView.findViewById(R.id.listItems);
+
+        Toolbar toolbar = rootView.findViewById(R.id.toolbar_top);
+        toolbar.setBackgroundColor(Color.parseColor(_bgColor));
+
         TextView btnHome=rootView.findViewById(R.id.btnHome);
         TextView spinnerTitle=rootView.findViewById(R.id.spinnerTitle);
         List fi= (List) getArguments().getSerializable(ITEMS);
         spinnerTitle.setText(fi.get(0).toString());
         TextView btncancle=rootView.findViewById(R.id.btncancle);
+
+        btncancle.setBackgroundColor(Color.parseColor(_bgColor));
+
         btnHome.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -273,6 +284,10 @@ public class SearchableListDialog extends DialogFragment implements
     public void onContactSelected(String contact,int position) {
         _searchableItem.onSearchableItemClicked(listAdapter.getItem(position),position);
         getDialog().dismiss();
+    }
+
+    public void setColor(String bgColor) {
+        _bgColor=bgColor;
     }
 
     public interface SearchableItem<T> extends Serializable {

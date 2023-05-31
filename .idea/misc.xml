@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/long_back_arrow.xml" value="0.1265" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="searchablespinner/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1805" />
+        <entry key="searchablespinner/src/main/res/drawable/ic_launcher_background.xml" value="0.1805" />
+        <entry key="searchablespinner/src/main/res/drawable/long_back_arrow.xml" value="0.1805" />
         <entry key="searchablespinner/src/main/res/layout/dialog_searchable_spinner.xml" value="0.25052083333333336" />
         <entry key="searchablespinner/src/main/res/layout/simple_spinner_item.xml" value="0.1140625" />
       </map>
